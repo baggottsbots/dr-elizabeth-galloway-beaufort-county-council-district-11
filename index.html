@@ -379,7 +379,7 @@
     <div class="platform-grid">
       <div class="platform-card reveal">
         <div class="platform-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7L12 3 3 7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20"/><path d="M4 12v10"/><path d="M8 12v10"/><path d="M12 12v10"/><path d="M16 12v10"/><path d="M20 12v10"/><path d="M1 12h22"/><path d="M12 2L1 12h22L12 2z"/></svg>
         </div>
         <div class="platform-card-title">Bring Trust Back to County Council</div>
         <div class="platform-card-sub">Accountability &middot; Transparency &middot; Leadership</div>
@@ -506,6 +506,31 @@
     </nav>
   </div>
 </footer>
+
+<!-- POPUP MODAL -->
+
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <button class="popup-close" onclick="closePopup()" aria-label="Close">&times;</button>
+    <div class="popup-body">
+      <div class="popup-eyebrow">Stay Informed &mdash; District 11</div>
+      <h2 class="popup-title" id="popupTitle">Keep Up With<br>Dr. Galloway</h2>
+      <p class="popup-sub">Join neighbors across Hilton Head Island getting campaign updates, event invites, and voting reminders. Election Day is June 9, 2026.</p>
+      <form class="popup-form" onsubmit="handlePopupSubmit(event)">
+        <div class="popup-row">
+          <input type="text" class="popup-input" placeholder="First Name" required />
+          <input type="text" class="popup-input" placeholder="Last Name" />
+        </div>
+        <input type="email" class="popup-input" placeholder="Email Address" required />
+        <button type="submit" class="popup-btn">Keep Me Updated</button>
+        <div class="popup-success" id="popupSuccess">You&rsquo;re signed up. Thank you for supporting Dr. Galloway!</div>
+      </form>
+    </div>
+    <div class="popup-footer-row">
+      <button class="popup-dismiss" onclick="closePopup()">No thanks, I&rsquo;ll stay uninformed</button>
+    </div>
+  </div>
+</div>
 
 
 
