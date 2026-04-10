@@ -4,6 +4,17 @@ function toggleMenu() { document.getElementById('navLinks').classList.toggle('op
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   function handleSubmit(e) { e.preventDefault(); const m = document.getElementById('formSuccess'); m.style.display = 'block'; e.target.reset(); setTimeout(() => m.style.display = 'none', 6000); }
 
+  // Popup
+  function closePopup() { document.getElementById('popupOverlay').classList.remove('open'); }
+  function handlePopupSubmit(e) { e.preventDefault(); document.getElementById('popupSuccess').style.display = 'block'; e.target.querySelectorAll('input,button[type=submit]').forEach(el => el.style.display = 'none'); setTimeout(closePopup, 3000); }
+  document.getElementById('popupOverlay').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
+  if (!sessionStorage.getItem('popupDismissed')) {
+    setTimeout(() => {
+      document.getElementById('popupOverlay').classList.add('open');
+      sessionStorage.setItem('popupDismissed', '1');
+    }, 6000);
+  }
+
   // Countdown to June 9, 2026
   function updateCountdown() {
     const target = new Date('2026-06-09T07:00:00-04:00').getTime();
