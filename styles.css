@@ -254,13 +254,34 @@ h2.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.
 .form-success { display: none; padding: 0.9rem 1.1rem; background: #f0faf4; border: 1px solid #a8dfc0; color: #2a7a4e; font-size: 0.9rem; }
 
 /* FOOTER */
-footer { background: var(--navy); padding: 2rem; }
+footer { background: #0d1f3c; padding: 2rem; }
 .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-brand { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1rem; font-weight: 600; }
-.footer-legal { font-size: 0.66rem; color: rgba(255,255,255,0.35); text-align: center; }
+.footer-legal { font-size: 0.66rem; color: rgba(255,255,255,0.35); text-align: center; flex: 1; }
 .footer-nav { display: flex; gap: 1.5rem; }
 .footer-nav a { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
 .footer-nav a:hover { color: white; }
+
+/* POPUP */
+.popup-overlay { display: none; position: fixed; inset: 0; background: rgba(13,31,60,0.72); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem; }
+.popup-overlay.open { display: flex; }
+.popup-box { background: white; max-width: 480px; width: 100%; position: relative; border-top: 4px solid #8b1a1a; box-shadow: 0 24px 80px rgba(0,0,0,0.35); animation: popIn 0.35s ease; }
+@keyframes popIn { from { opacity:0; transform:translateY(20px) scale(0.97); } to { opacity:1; transform:none; } }
+.popup-close { position: absolute; top: 0.9rem; right: 0.9rem; background: none; border: none; cursor: pointer; color: #6a6a6a; line-height: 1; padding: 0.3rem; font-size: 1.1rem; transition: color 0.2s; }
+.popup-close:hover { color: #1a1a1a; }
+.popup-body { padding: 2.5rem 2.5rem 1.5rem; }
+.popup-eyebrow { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #8b1a1a; margin-bottom: 0.5rem; }
+.popup-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; color: #0d1f3c; line-height: 1.15; margin-bottom: 0.5rem; }
+.popup-sub { font-size: 0.88rem; color: #6a6a6a; line-height: 1.65; margin-bottom: 1.8rem; }
+.popup-form { display: flex; flex-direction: column; gap: 0.85rem; }
+.popup-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+.popup-input { background: #fafaf8; border: 1px solid #dddbd4; border-bottom: 2px solid #c8c4b8; color: #1a1a1a; padding: 0.72rem 0.9rem; font-family: 'Libre Franklin', sans-serif; font-size: 0.9rem; width: 100%; outline: none; transition: border-color 0.2s; }
+.popup-input:focus { border-color: #0d1f3c; border-bottom-color: #0d1f3c; }
+.popup-btn { background: #8b1a1a; color: white; border: none; padding: 0.95rem; font-family: 'Libre Franklin', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; width: 100%; transition: background 0.2s; }
+.popup-btn:hover { background: #a82020; }
+.popup-success { display: none; padding: 1rem; background: #f0faf4; border: 1px solid #a8dfc0; color: #2a7a4e; font-size: 0.88rem; text-align: center; }
+.popup-footer-row { padding: 0.8rem 2.5rem 1.2rem; border-top: 1px solid #dddbd4; text-align: center; }
+.popup-dismiss { background: none; border: none; cursor: pointer; font-size: 0.72rem; color: #6a6a6a; text-decoration: underline; }
 
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
@@ -290,6 +311,11 @@ footer { background: var(--navy); padding: 2rem; }
   section { padding: 60px 1.2rem; }
   .platform-banner { flex-direction: column; }
   .masthead-label { display: none; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .footer-legal { text-align: left; flex: none; }
+  .popup-row { grid-template-columns: 1fr; }
+  .popup-body { padding: 2rem 1.5rem 1.5rem; }
+  .popup-footer-row { padding: 0.8rem 1.5rem 1.2rem; }
 }
 @media (max-width: 600px) {
   .masthead-cta { display: none; }
