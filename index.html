@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  
+  
+  
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+
+<!-- SEO Meta Tags -->
+<title>Dr. Elizabeth Galloway for Beaufort County Council District 11</title>
+<meta name="description" content="Join Dr. Elizabeth Galloway’s campaign for Beaufort County Council District 11. Dedicated to trust, collaboration, and results for Hilton Head residents." />
+<meta name="keywords" content="Elizabeth Galloway Beaufort County Council" />
+<meta property="og:title" content="Dr. Elizabeth Galloway for Beaufort County Council District 11" />
+<meta property="og:description" content="Join Dr. Elizabeth Galloway’s campaign for Beaufort County Council District 11. Dedicated to trust, collaboration, and results for Hilton Head residents." />
+<meta property="og:image" content="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781502026_blob.jpeg" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dr. Elizabeth Galloway for Beaufort County Council District 11" />
+<meta name="twitter:description" content="Join Dr. Elizabeth Galloway’s campaign for Beaufort County Council District 11. Dedicated to trust, collaboration, and results for Hilton Head residents." />
+<meta name="twitter:image" content="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781502026_blob.jpeg" />
+<link rel="icon" href="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781591657_blob.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781591657_blob.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781591657_blob.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781591657_blob.png" />
+<!-- End SEO Meta Tags -->
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=3132');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='vJW4Jk';
+  var apiBase='https://paymegpt.com';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">Thank you for purchasing '+pName.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'.</p><button onclick="document.getElementById(\'payment-success-overlay\').remove();window.history.replaceState({},\'\',window.location.pathname);" style="padding:12px 32px;font-size:16px;font-weight:600;background:#16a34a;color:white;border:none;border-radius:8px;cursor:pointer;">Continue</button></div>';
+      document.body.appendChild(overlay);
+    }
+  });
+})();
+</script>  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="masthead-top">
+  <div class="masthead-inner">
+    <div class="masthead-label">Vote <strong>June 9, 2026</strong> &mdash; Beaufort County Council District 11</div>
+    <div class="countdown-units">
+      <div class="cu">
+        <div class="cu-block"><span class="cu-num" id="cd-days">00</span><span class="cu-label">Days</span></div>
+        <span class="cu-sep">&middot;</span>
+        <div class="cu-block"><span class="cu-num" id="cd-hrs">00</span><span class="cu-label">Hrs</span></div>
+        <span class="cu-sep">&middot;</span>
+        <div class="cu-block"><span class="cu-num" id="cd-min">00</span><span class="cu-label">Min</span></div>
+        <span class="cu-sep">&middot;</span>
+        <div class="cu-block"><span class="cu-num" id="cd-sec">00</span><span class="cu-label">Sec</span></div>
+      </div>
+    </div>
+    <a href="#contact" class="masthead-cta">Get Involved</a>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">
+      Dr. Elizabeth Galloway
+      <span>Beaufort County Council &middot; District 11</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#district">District 11</a></li>
+      <li><a href="#meet">About</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact" class="nav-cta">Get Involved</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section id="hero" style="padding:0;">
+  <div class="hero-inner">
+    <div class="hero-left" style="padding-left:2rem;">
+      <div class="hero-kicker"><div class="hero-kicker-line"></div>Beaufort County Council &middot; District 11 &middot; 2026</div>
+      <h1 class="hero-name">Dr. Elizabeth<br><em>Galloway</em></h1>
+      <p class="hero-district">D.D.S. &nbsp;&middot;&nbsp; 40-Year Hilton Head Resident &nbsp;&middot;&nbsp; Community Leader</p>
+      <div class="hero-rule"></div>
+      <p class="hero-tagline">&ldquo;Fresh Leadership for a Better Tomorrow&rdquo;</p>
+      <div class="hero-pillars">
+        <div class="pillar"><span class="pillar-diamond"></span>Trust</div>
+        <div class="pillar"><span class="pillar-diamond"></span>Collaboration</div>
+        <div class="pillar"><span class="pillar-diamond"></span>Results</div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get Involved</a>
+        <a href="#meet" class="btn-ghost">Meet Dr. Galloway</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://paymegpt.com/objects/quick-uploads/2/a82c99c2f851458e.png" alt="Dr. Elizabeth Galloway, candidate for Beaufort County Council District 11" />
+      <div class="hero-photo-overlay"></div>
+    </div>
+  </div>
+</section>
+
+<div class="election-bar">
+  <div class="election-bar-inner">
+    <div class="election-cell"><div class="election-label">Early In-Person Voting</div><div class="election-value">May 26 &ndash; June 5, 2026</div></div>
+    <div class="election-cell"><div class="election-label">Election Day</div><div class="election-value">June 9, 2026</div></div>
+    <div class="election-cell"><div class="election-label">Race</div><div class="election-value">Republican Primary</div></div>
+  </div>
+</div>
+
+<section id="district">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="eyebrow">Your District</div>
+      <h2 class="section-title">Beaufort County Council<br>District 11</h2>
+      <p class="section-lead">District 11 encompasses Sea Pines, Wexford, Long Cove, Port Royal, Spanish Wells, Palmetto Dunes, Leamington, Shipyard, TidePointe, neighborhoods between South Forest Beach and Cordillo Pkwy, Yacht Cove, and Shelter Cove.</p>
+    </div>
+    <div class="district-layout reveal">
+      <div class="district-map-wrap">
+        <img src="https://paymegpt.com/objects/quick-uploads/2/b0e314139c25071b.jpeg" alt="Precincts map for Beaufort County Council District 11" />
+        <p class="map-caption">Precincts within Beaufort County Council District 11 &mdash; Hilton Head Island</p>
+      </div>
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--navy);margin-bottom:1.5rem;">When &amp; Where to Vote</h3>
+        <div class="vote-dates">
+          <div class="vote-date-cell"><div class="vote-label">Early In-Person Voting</div><div class="vote-date-val">May 26 &ndash; June 5, 2026</div></div>
+          <div class="vote-date-cell"><div class="vote-label">Election Day</div><div class="vote-date-val">June 9, 2026</div></div>
+        </div>
+        <div class="locations-title">Early Voting Locations</div>
+        <div class="locations-grid">
+          <div class="loc-card"><div class="loc-name">Bluffton</div><div class="loc-address">Bluffton Branch Library<br>120 Palmetto Way<br>Bluffton, SC 29910</div></div>
+          <div class="loc-card"><div class="loc-name">Hilton Head Island</div><div class="loc-address">USCB Hilton Head Island Campus<br>1 Sand Shark Drive<br>Hilton Head Island, SC 29928</div></div>
+        </div>
+        <div class="reg-note"><strong>Not sure about your district?</strong> Check your voter registration and confirm your precinct at <a href="https://www.scvotes.gov" target="_blank" rel="noopener">scvotes.gov</a>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="meet">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="eyebrow">About the Candidate</div>
+      <h2 class="section-title">Meet Dr. Elizabeth<br>W. Galloway, D.D.S.</h2>
+    </div>
+    <div class="meet-layout">
+      <div class="meet-photo-col reveal">
+        <img class="meet-photo-main" src="https://paymegpt.com/objects/quick-uploads/2/034aa0a2cf9b01f1.png" alt="Dr. Elizabeth Galloway" />
+        <div class="meet-stat"><div class="meet-stat-num">40</div><div class="meet-stat-label">Years as a<br>Sea Pines Resident</div></div>
+      </div>
+      <div class="reveal" style="transition-delay:0.15s">
+        <blockquote class="meet-quote">&ldquo;This is our home &mdash; and it&rsquo;s time we protect it with the passion and integrity it deserves.&rdquo;</blockquote>
+        <p class="meet-body">A proud 40-year resident of Sea Pines, Dr. Galloway built and ran a successful dental practice on Hilton Head Island for over 35 years, caring for thousands of Lowcountry families. She brings proven business acumen, real-world common sense, and a lifelong commitment to this community to her campaign for County Council.</p>
+        <p class="meet-body">She is running because today, this way of life faces growing pressure &mdash; from congested roads and strained infrastructure to unchecked development threatening our environment and the families who call this island home.</p>
+        <div class="bio-grid">
+          <div class="bio-card"><div class="bio-title">Education</div><div class="bio-body">University of Notre Dame &middot; School of Dentistry, Loyola University of Chicago &middot; Notre Dame Club of HHI Alumni Board</div></div>
+          <div class="bio-card"><div class="bio-title">Professional Career</div><div class="bio-body">Dental practice owner &amp; operator, HHI, 35+ years &middot; SCDA House of Delegates &middot; National Dental PBRN Clinical Investigator</div></div>
+          <div class="bio-card"><div class="bio-title">Family of Patriots</div><div class="bio-body">Descendant of Revolutionary War patriots &middot; Father served WWII Army in Europe &middot; Mother served USAF Air Traffic Control &middot; Husband is a Vietnam veteran</div></div>
+          <div class="bio-card"><div class="bio-title">Heritage &amp; Service</div><div class="bio-body">Registrar, National Society DAR &ndash; Capt. William Hilton Chapter &middot; Sons &amp; Daughters of Pilgrims &middot; Jamestowne Society</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="family">
+  <div class="section-wrap">
+    <div class="family-layout">
+      <div class="reveal">
+        <div class="eyebrow">Roots of Service</div>
+        <h2 class="section-title">A Family That<br>Answered the Call</h2>
+        <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.75;margin-bottom:1rem;">Dr. Galloway&rsquo;s dedication to Beaufort County is shaped by a family history of service and sacrifice. Her father fought in Europe with the Army in World War II, while her mother served as an air traffic controller for the Air Force. Her husband is a Vietnam veteran.</p>
+        <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.75;">A direct descendant of Revolutionary War patriots, she served as Registrar for the National Society Daughters of the American Revolution and as a volunteer Field Genealogist for the National Society Sons and Daughters of Pilgrims.</p>
+        <div class="family-quote-block">
+          <div class="family-quote-mark">&ldquo;</div>
+          <p class="family-quote-text">Land of our Fathers! Ours to Preserve. Ours to Transmit. Liberty in Union; Now and Forever.</p>
+          <p class="family-quote-attr">NSSDP Motto</p>
+        </div>
+        <div class="family-tags">
+          <div class="tag">WWII Army Veteran Father</div>
+          <div class="tag">USAF Veteran Mother</div>
+          <div class="tag">Vietnam Veteran Husband</div>
+          <div class="tag">DAR Member</div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.2s">
+        <img class="family-photo" src="https://paymegpt.com/objects/quick-uploads/2/d104e638e9448ceb.jpeg" alt="Dr. Galloway's parents" />
+        <p class="family-photo-caption">Dr. Galloway&rsquo;s Parents &mdash; A Legacy of Service</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platform">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="eyebrow">The Issues</div>
+      <h2 class="section-title">Fresh Leadership<br>for a Better Tomorrow</h2>
+      <p class="section-lead">Dr. Galloway is committed to honest, ethical leadership and intellectual rigor &mdash; working collaboratively with all stakeholders to find real, sustainable solutions for Hilton Head Island.</p>
+    </div>
+    <div class="platform-grid">
+      <div class="platform-card reveal">
+        <div class="platform-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7L12 3 3 7z"/></svg>
+        </div>
+        <div class="platform-card-title">Bring Trust Back to County Council</div>
+        <div class="platform-card-sub">Accountability &middot; Transparency &middot; Leadership</div>
+        <ul class="platform-list">
+          <li>Real-world business skills: fiscal discipline, bottom-line accountability, payroll management, and efficient problem-solving</li>
+          <li>Principled decisions that always put Hilton Head families and the island&rsquo;s future first</li>
+          <li>Honest, open discussions on the issues that matter most to residents</li>
+          <li>Collaborate with town and county leaders for lasting solutions</li>
+        </ul>
+      </div>
+      <div class="platform-card reveal" style="transition-delay:0.1s">
+        <div class="platform-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="platform-card-title">Champion Island Residents</div>
+        <div class="platform-card-sub">Environment &middot; Infrastructure &middot; Healthcare</div>
+        <ul class="platform-list">
+          <li>Protect the natural beauty and unique character of our Lowcountry community by addressing overdevelopment</li>
+          <li>Partner with state legislators for funding and solutions for traffic congestion, stormwater management, and critical infrastructure</li>
+          <li>Champion greater access to healthcare for our rapidly aging population</li>
+          <li>Ensure fiscal responsibility and put working families and small businesses first</li>
+        </ul>
+      </div>
+      <div class="platform-card reveal" style="transition-delay:0.2s">
+        <div class="platform-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="platform-card-title">Deliver Results</div>
+        <div class="platform-card-sub">Integrity &middot; Analytical Thinking &middot; Action</div>
+        <ul class="platform-list">
+          <li>Not decisions driven by special interests or the loudest voices</li>
+          <li>Ready to serve &mdash; not to seek the limelight, but to deliver results</li>
+          <li>Proven track record: trusted by thousands of families for over 35 years</li>
+          <li>Intellectual honesty applied to every vote, every issue, every decision</li>
+        </ul>
+      </div>
+    </div>
+    <div class="platform-banner reveal">
+      <div>
+        <div class="platform-banner-quote">&ldquo;We need intellectual honesty and analytical thinking on County Council &mdash; not decisions driven by special interests or the loudest voices. I&rsquo;m ready to serve not to seek the limelight but to deliver results.&rdquo;</div>
+        <div class="platform-banner-attr">&mdash; Dr. Elizabeth Galloway</div>
+      </div>
+      <a href="#contact" class="btn-primary" style="white-space:nowrap;flex-shrink:0;">Join the Campaign</a>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="eyebrow">Community Voice</div>
+      <h2 class="section-title">What People Are Saying</h2>
+      <p class="section-lead">Thousands of Lowcountry families have trusted Dr. Galloway for over 35 years. Her patients speak to the same character she will bring to County Council.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard reveal"><div class="tcard-tag">Caring &amp; Efficient</div><blockquote>&ldquo;Doctor Galloway is a very good dentist &mdash; <strong>very caring and efficient</strong>. She has a wonderful staff!&rdquo;</blockquote><div class="tcard-source">Patient Review &mdash; March 2019</div></div>
+      <div class="tcard reveal" style="transition-delay:0.1s"><div class="tcard-tag">Chair Side Manner</div><blockquote>&ldquo;Dr. Galloway has wonderful chair-side manner and very comfy chairs to boot. All of the staff are <strong>efficient and friendly</strong>. I have recommended Dr. Galloway to all of my family members.&rdquo;</blockquote><div class="tcard-source">Patient Review &mdash; October 2015</div></div>
+      <div class="tcard reveal" style="transition-delay:0.15s"><div class="tcard-tag">Modern Technology</div><blockquote>&ldquo;One of the <strong>cleanest and most attractive dentist offices</strong> I have visited. She used brand new 3D printing technology to create my crown. She always responds promptly and genuinely cares about her patients.&rdquo;</blockquote><div class="tcard-source">Patient Review &mdash; September 2015</div></div>
+      <div class="tcard reveal" style="transition-delay:0.2s"><div class="tcard-tag">Ethical &amp; Trustworthy</div><blockquote>&ldquo;We find Dr. Galloway to be <strong>straight-forward and no-nonsense</strong>. She is not one of those dentists who recommends a lot of costly and non-essential treatments.&rdquo;</blockquote><div class="tcard-source">Yelp Review</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="pullquote-section">
+  <div class="pullquote-inner">
+    <p class="pullquote-text">&ldquo;What draws us all to this special place &mdash; this piece of heaven &mdash; is its breathtaking natural beauty, rich cultural heritage, warm Lowcountry communities, and world-class quality of life. It&rsquo;s time we protect it.&rdquo;</p>
+    <div class="pullquote-line"></div>
+    <p class="pullquote-attr">Dr. Elizabeth Galloway &mdash; Candidate, Beaufort County Council District 11</p>
+    <div style="margin-top:2rem;"><a href="#contact" class="btn-primary">Help Protect Our Home</a></div>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="section-wrap">
+    <div class="section-header" style="text-align:center;margin-bottom:3rem;">
+      <div class="eyebrow" style="justify-content:center;">Get Involved</div>
+      <h2 class="section-title">Contact Dr. Galloway &amp; Get Involved</h2>
+    </div>
+    <div class="contact-layout reveal">
+      <div>
+        <div class="contact-info-title">Campaign Information</div>
+        <div class="contact-row">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="contact-row-text"><strong>Hilton Head Island, SC</strong>Beaufort County Council District 11</div>
+        </div>
+        <div class="contact-row">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <div class="contact-row-text"><strong>Election Day: June 9, 2026</strong>Early Voting: May 26 &ndash; June 5, 2026</div>
+        </div>
+        <div class="contact-row">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="contact-row-text"><strong>Stay Informed</strong>Sign up below for campaign news and updates</div>
+        </div>
+        <div class="contact-socials">
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">Donate</a>
+        </div>
+        <blockquote style="margin-top:2rem;padding:1.5rem;border:1px solid var(--rule);background:var(--white);font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--text-mid);line-height:1.6;border-left:3px solid var(--gold);">&ldquo;I will fight for honest, open discussions on the issues that matter most, collaborate with our town and county leaders, and always make principled decisions that put Hilton Head families and our island&rsquo;s future first.&rdquo;</blockquote>
+      </div>
+      <form class="form-grid" onsubmit="handleSubmit(event)">
+        <div class="form-row2">
+          <div class="form-group"><label class="form-label">First Name *</label><input type="text" class="form-input" placeholder="Jane" required /></div>
+          <div class="form-group"><label class="form-label">Last Name *</label><input type="text" class="form-input" placeholder="Smith" required /></div>
+        </div>
+        <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-input" placeholder="jane@example.com" required /></div>
+        <div class="form-group"><label class="form-label">Subject *</label><input type="text" class="form-input" placeholder="How can I help?" required /></div>
+        <div class="form-group"><label class="form-label">Message *</label><textarea class="form-textarea" placeholder="Tell Dr. Galloway what matters most to you, or how you'd like to get involved..." required></textarea></div>
+        <label class="form-check"><input type="checkbox" /> Sign up for news and campaign updates</label>
+        <button type="submit" class="form-submit">Send Message</button>
+        <div class="form-success" id="formSuccess">Message received. Dr. Galloway's team will be in touch soon.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Elizabeth Galloway for Beaufort County Council District 11</div>
+    <div class="footer-legal">Paid for by Dr. Elizabeth Galloway for Beaufort County Council &middot; Hilton Head Island, SC &middot; 2026</div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#district">Voting Info</a>
+      <a href="#platform">Platform</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
