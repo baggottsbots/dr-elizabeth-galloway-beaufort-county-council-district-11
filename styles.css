@@ -313,6 +313,7 @@ footer { background: #0d1f3c; padding: 2rem; }
   .masthead-label { display: none; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
   .footer-legal { text-align: left; flex: none; }
+  .footer-nav { display: none; }
   .popup-row { grid-template-columns: 1fr; }
   .popup-body { padding: 2rem 1.5rem 1.5rem; }
   .popup-footer-row { padding: 0.8rem 1.5rem 1.2rem; }
