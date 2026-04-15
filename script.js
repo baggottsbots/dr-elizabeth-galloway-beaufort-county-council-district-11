@@ -1,10 +1,13 @@
-function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+function openDonate(e) { if(e) e.preventDefault(); document.getElementById('donateOverlay').classList.add('open'); }
+  function closeDonate() { document.getElementById('donateOverlay').classList.remove('open'); }
+  document.getElementById('donateOverlay').addEventListener('click', function(e) { if (e.target === this) closeDonate(); });
+
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
   const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   function handleSubmit(e) { e.preventDefault(); const m = document.getElementById('formSuccess'); m.style.display = 'block'; e.target.reset(); setTimeout(() => m.style.display = 'none', 6000); }
 
-  // Popup
   function closePopup() { document.getElementById('popupOverlay').classList.remove('open'); }
   function handlePopupSubmit(e) { e.preventDefault(); document.getElementById('popupSuccess').style.display = 'block'; e.target.querySelectorAll('input,button[type=submit]').forEach(el => el.style.display = 'none'); setTimeout(closePopup, 3000); }
   document.getElementById('popupOverlay').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
