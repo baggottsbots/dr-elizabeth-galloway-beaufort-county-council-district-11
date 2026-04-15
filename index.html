@@ -228,7 +228,7 @@
         <div class="cu-block"><span class="cu-num" id="cd-sec">00</span><span class="cu-label">Sec</span></div>
       </div>
     </div>
-    <a href="#contact" class="masthead-cta">Get Involved</a>
+    <a href="#" class="masthead-cta" onclick="openDonate(event)">Donate</a>
   </div>
 </div>
 
@@ -243,7 +243,8 @@
       <li><a href="#meet">About</a></li>
       <li><a href="#platform">Platform</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#contact" class="nav-cta">Get Involved</a></li>
+      <li><a href="#contact">Get Involved</a></li>
+      <li><a href="#" class="nav-cta" onclick="openDonate(event)">Donate</a></li>
     </ul>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -251,29 +252,25 @@
   </div>
 </nav>
 
+<!-- HERO: full-width image on top, centered text content below -->
+
 <section id="hero" style="padding:0;">
-  <!-- Mobile-only: image appears above text -->
-  <img class="hero-mobile-img" src="https://paymegpt.com/objects/quick-uploads/2/9e6ee7a522fd50e1.jpeg" alt="Dr. Elizabeth Galloway" />
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-kicker"><div class="hero-kicker-line"></div>Beaufort County Council &middot; District 11 &middot; 2026</div>
-      <h1 class="hero-name">Dr. Elizabeth<br><em>Galloway</em></h1>
-      <p class="hero-district">D.D.S. &nbsp;&middot;&nbsp; 40-Year Hilton Head Resident &nbsp;&middot;&nbsp; Community Leader</p>
-      <div class="hero-rule"></div>
-      <p class="hero-tagline">&ldquo;Fresh Leadership for a Better Tomorrow&rdquo;</p>
-      <div class="hero-pillars">
-        <div class="pillar"><span class="pillar-diamond"></span>Trust</div>
-        <div class="pillar"><span class="pillar-diamond"></span>Collaboration</div>
-        <div class="pillar"><span class="pillar-diamond"></span>Results</div>
-      </div>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Get Involved</a>
-        <a href="#meet" class="btn-ghost">Meet Dr. Galloway</a>
-      </div>
+  <div class="hero-image-wrap">
+    <img src="https://paymegpt.com/objects/quick-uploads/2/9e6ee7a522fd50e1.jpeg" alt="Dr. Elizabeth Galloway, candidate for Beaufort County Council District 11" />
+  </div>
+  <div class="hero-content">
+    <div class="hero-kicker"><div class="hero-kicker-line"></div>Beaufort County Council &middot; District 11 &middot; 2026<div class="hero-kicker-line"></div></div>
+    <h1 class="hero-name">Dr. Elizabeth<br><em>Galloway</em></h1>
+    <p class="hero-district">40-Year Hilton Head Resident &nbsp;&middot;&nbsp; Community Leader</p>
+    <div class="hero-rule" style="margin-left:auto;margin-right:auto;"></div>
+    <p class="hero-tagline">&ldquo;Fresh Leadership for a Better Tomorrow&rdquo;</p>
+    <div class="hero-pillars">
+      <div class="pillar"><span class="pillar-diamond"></span>Trust</div>
+      <div class="pillar"><span class="pillar-diamond"></span>Collaboration</div>
+      <div class="pillar"><span class="pillar-diamond"></span>Results</div>
     </div>
-    <div class="hero-right">
-      <img src="https://paymegpt.com/objects/quick-uploads/2/9e6ee7a522fd50e1.jpeg" alt="Dr. Elizabeth Galloway, candidate for Beaufort County Council District 11" />
-      <div class="hero-photo-overlay"></div>
+    <div class="hero-actions">
+      <a href="#meet" class="btn-ghost">Meet Dr. Galloway</a>
     </div>
   </div>
 </section>
@@ -474,7 +471,7 @@
         </div>
         <div class="contact-socials">
           <a href="#" class="social-link">Facebook</a>
-          <a href="#" class="social-link">Donate</a>
+          <a href="#" class="social-link" onclick="openDonate(event)">Donate</a>
         </div>
         <blockquote style="margin-top:2rem;padding:1.5rem;border:1px solid var(--rule);background:var(--white);font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--text-mid);line-height:1.6;border-left:3px solid var(--gold);">&ldquo;I will fight for honest, open discussions on the issues that matter most, collaborate with our town and county leaders, and always make principled decisions that put Hilton Head families and our island&rsquo;s future first.&rdquo;</blockquote>
       </div>
@@ -527,6 +524,27 @@
     </div>
     <div class="popup-footer-row">
       <button class="popup-dismiss" onclick="closePopup()">No thanks, I&rsquo;ll stay uninformed</button>
+    </div>
+  </div>
+</div>
+
+<!-- DONATE MODAL -->
+
+<div class="popup-overlay" id="donateOverlay">
+  <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="donateTitle" style="max-width:520px;">
+    <button class="popup-close" onclick="closeDonate()" aria-label="Close">&times;</button>
+    <div class="popup-body" style="text-align:center;">
+      <div class="popup-eyebrow">Support the Campaign</div>
+      <h2 class="popup-title" id="donateTitle">Donate to<br>Dr. Galloway</h2>
+      <p class="popup-sub">Your contribution helps bring fresh, honest leadership to Beaufort County Council District 11. Every dollar makes a difference.</p>
+      <div style="display:flex;justify-content:center;margin:1.5rem 0 0.5rem;overflow:hidden;max-height:60px;">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <button disabled style="color:#ffffff;font-size:16px;font-family:'Open Sans',sans-serif;font-weight:bold;background-color:#ff0000;padding:7px 16px;display:inline-block;border-radius:7px;border:1px solid #0000FF;box-shadow:0 2px 4px 0 rgba(0,0,0,0.25);">Click Here to Donate</button>
+        <script src="https://www.convergepay.com/hosted-payments/buy_button_script/476d325a2f6a3979547a612b702f79674a79456b57414141415a3249486f6e61"></script>
+      </div>
+    </div>
+    <div class="popup-footer-row">
+      <button class="popup-dismiss" onclick="closeDonate()">Maybe later</button>
     </div>
   </div>
 </div>
