@@ -18,7 +18,6 @@ function openDonate(e) { if(e) e.preventDefault(); document.getElementById('dona
     }, 6000);
   }
 
-  // Countdown to June 9, 2026
   function updateCountdown() {
     const target = new Date('2026-06-09T07:00:00-04:00').getTime();
     const now = Date.now();
