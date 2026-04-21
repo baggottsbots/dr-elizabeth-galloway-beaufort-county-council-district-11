@@ -77,24 +77,6 @@ section { padding: 96px 2rem; }
 h2.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 600; color: var(--navy); line-height: 1.1; margin-bottom: 1.2rem; }
 .section-lead { font-size: 1.1rem; color: var(--text-mid); max-width: 620px; line-height: 1.8; }
 
-/* DISTRICT */
-#district { background: var(--white); border-bottom: 1px solid var(--rule); }
-.district-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.district-map-wrap img { width: 100%; border: 1px solid var(--rule); box-shadow: 4px 4px 0 var(--navy); }
-.map-caption { font-size: 0.82rem; color: var(--text-light); font-style: italic; margin-top: 0.6rem; }
-.vote-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); margin-bottom: 2rem; }
-.vote-date-cell { padding: 1.4rem 1.5rem; border-right: 1px solid var(--rule); }
-.vote-date-cell:last-child { border-right: none; }
-.vote-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.3rem; }
-.vote-date-val { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); line-height: 1.2; }
-.locations-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); margin-bottom: 1rem; }
-.locations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); margin-bottom: 1.5rem; }
-.loc-card { background: var(--off-white); padding: 1.1rem 1.2rem; }
-.loc-name { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.35rem; }
-.loc-address { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
-.reg-note { padding: 0.9rem 1.1rem; background: var(--gray-1); border-left: 3px solid var(--crimson); font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
-.reg-note a { color: var(--crimson); font-weight: 600; }
-
 /* MEET */
 #meet { background: var(--off-white); border-bottom: 1px solid var(--rule); }
 .meet-layout { display: grid; grid-template-columns: 380px 1fr; gap: 6rem; align-items: start; }
@@ -106,13 +88,22 @@ h2.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.
 .meet-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-style: italic; color: var(--navy); line-height: 1.45; padding: 1.5rem 1.8rem; border-left: 4px solid var(--crimson); margin-bottom: 2rem; background: var(--white); }
 .meet-body { font-size: 1rem; color: var(--text-mid); margin-bottom: 1rem; line-height: 1.8; }
 
-/* HERITAGE GOLF GALLERY */
+/* HERITAGE GOLF GALLERY — FIXED */
 .heritage-gallery { margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--rule); }
 .heritage-caption { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--navy); line-height: 1.4; margin-bottom: 2rem; }
 .heritage-caption::before, .heritage-caption::after { content: '\201C'; color: var(--crimson); font-weight: 700; }
 .heritage-caption::after { content: '\201D'; }
 .heritage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-.heritage-grid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border: 1px solid var(--rule); box-shadow: 3px 3px 0 var(--navy); display: block; }
+/* KEY FIX: landscape ratio + top-aligned so faces show */
+.heritage-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--rule);
+  box-shadow: 3px 3px 0 var(--navy);
+  display: block;
+}
 
 /* FAMILY */
 #family { background: var(--white); border-bottom: 1px solid var(--rule); }
@@ -140,6 +131,24 @@ h2.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.
 .platform-banner { margin-top: 3rem; padding: 2.5rem 3rem; background: var(--navy); display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
 .platform-banner-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; color: white; line-height: 1.5; max-width: 680px; }
 .platform-banner-attr { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); margin-top: 0.5rem; }
+
+/* DISTRICT — now after platform */
+#district { background: var(--white); border-bottom: 1px solid var(--rule); }
+.district-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.district-map-wrap img { width: 100%; border: 1px solid var(--rule); box-shadow: 4px 4px 0 var(--navy); }
+.map-caption { font-size: 0.82rem; color: var(--text-light); font-style: italic; margin-top: 0.6rem; }
+.vote-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); margin-bottom: 2rem; }
+.vote-date-cell { padding: 1.4rem 1.5rem; border-right: 1px solid var(--rule); }
+.vote-date-cell:last-child { border-right: none; }
+.vote-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.3rem; }
+.vote-date-val { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); line-height: 1.2; }
+.locations-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); margin-bottom: 1rem; }
+.locations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); margin-bottom: 1.5rem; }
+.loc-card { background: var(--off-white); padding: 1.1rem 1.2rem; }
+.loc-name { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.35rem; }
+.loc-address { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
+.reg-note { padding: 0.9rem 1.1rem; background: var(--gray-1); border-left: 3px solid var(--crimson); font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
+.reg-note a { color: var(--crimson); font-weight: 600; }
 
 /* TESTIMONIALS */
 #testimonials { background: var(--white); border-bottom: 1px solid var(--rule); }
@@ -231,6 +240,7 @@ body > iframe, body > div[id*="converge"], body > div[style*="convergepay"] { di
   .platform-grid { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .vote-dates, .locations-grid, .form-row2 { grid-template-columns: 1fr; }
+  /* On mobile, heritage images go full-width single column */
   .heritage-grid { grid-template-columns: 1fr; }
   .election-bar-inner { grid-template-columns: 1fr; }
   .election-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
@@ -250,4 +260,3 @@ body > iframe, body > div[id*="converge"], body > div[style*="convergepay"] { di
 @media (max-width: 600px) {
   .masthead-inner { justify-content: center; }
 }
-```
