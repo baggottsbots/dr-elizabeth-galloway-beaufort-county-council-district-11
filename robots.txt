@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.gallowayforbeaufort11.com/sitemap.xml
