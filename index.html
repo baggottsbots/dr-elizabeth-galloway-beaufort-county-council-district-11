@@ -27,10 +27,10 @@
 <meta name="twitter:title" content="Dr. Elizabeth Galloway for Beaufort County Council District 11" />
 <meta name="twitter:description" content="Join Dr. Elizabeth Galloway’s campaign for Beaufort County Council District 11. Dedicated to trust, collaboration, and results for Hilton Head residents." />
 <meta name="twitter:image" content="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781502026_blob.jpeg" />
-<link rel="icon" href="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781591657_blob.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781591657_blob.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781591657_blob.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="https://paymegpt.com/api/landing-pages/images/landing-page-images%2F0%2F1775781591657_blob.png" />
+<link rel="icon" href="favicon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.png" />
 <!-- End SEO Meta Tags -->
 
 <script data-field-replace>
@@ -214,6 +214,11 @@
 </head>
 <body>
 
+<!-- ============================================================================ -->
+<!-- MASTHEAD: Countdown timer and donation CTA with election key info           -->
+<!-- Features: Sticky countdown, responsive layout, donation button              -->
+<!-- ============================================================================ -->
+
 <div class="masthead-top" style="background-color:#0d1f3c !important; display:block !important;">
   <div class="masthead-inner">
     <div class="masthead-label">Vote <strong>June 9, 2026</strong> &mdash; Beaufort County Council District 11</div>
@@ -232,7 +237,12 @@
   </div>
 </div>
 
-<nav id="navbar">
+<!-- ============================================================================ -->
+<!-- NAVIGATION: Sticky header with responsive hamburger menu and social links   -->
+<!-- Features: Brand logo, nav links, donation CTA, mobile-responsive menu       -->
+<!-- ============================================================================ -->
+
+<nav id="navbar" data-section="navbar">
   <div class="nav-inner">
     <a href="#hero" class="nav-brand">
       Dr. Elizabeth Galloway
@@ -244,6 +254,7 @@
       <li><a href="#district">District 11</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Get Involved</a></li>
+      <li><a href="https://www.instagram.com/dr.elizabethgalloway" target="_blank" rel="noopener noreferrer">Instagram</a></li>
       <li><a href="#" class="nav-cta" onclick="openDonate(event)">Donate</a></li>
     </ul>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
@@ -252,9 +263,13 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ============================================================================ -->
+<!-- HERO SECTION: Main landing area with headline, subtext, and primary CTA     -->
+<!-- Features: Background image, centered content, responsive layout             -->
+<!-- Mobile Padding: Ensures text never touches viewport edges                   -->
+<!-- ============================================================================ -->
 
-<section id="hero" style="padding:0;">
+<section id="hero" data-section="hero" style="padding:0;">
   <div class="hero-image-wrap">
     <img src="https://paymegpt.com/objects/quick-uploads/2/9e6ee7a522fd50e1.jpeg" alt="Dr. Elizabeth Galloway, candidate for Beaufort County Council District 11" />
   </div>
@@ -275,9 +290,12 @@
   </div>
 </section>
 
-<!-- ELECTION BAR -->
+<!-- ============================================================================ -->
+<!-- ELECTION BAR: Three-column display of key election dates and race info      -->
+<!-- Features: Early voting dates, Election Day, race type                       -->
+<!-- ============================================================================ -->
 
-<div class="election-bar">
+<div class="election-bar" data-section="election-bar">
   <div class="election-bar-inner">
     <div class="election-cell"><div class="election-label">Early In-Person Voting</div><div class="election-value">May 26 &ndash; June 5, 2026</div></div>
     <div class="election-cell"><div class="election-label">Election Day</div><div class="election-value">June 9, 2026</div></div>
@@ -285,9 +303,13 @@
   </div>
 </div>
 
-<!-- MEET -->
+<!-- ============================================================================ -->
+<!-- MEET SECTION: Two-column layout with candidate photo and biography         -->
+<!-- Features: Professional headshot, biography, heritage gallery                -->
+<!-- Mobile: Stacks to single column                                            -->
+<!-- ============================================================================ -->
 
-<section id="meet">
+<section id="meet" data-section="meet">
   <div class="section-wrap">
     <div class="section-header">
       <div class="eyebrow">About the Candidate</div>
@@ -306,24 +328,27 @@
       </div>
     </div>
 
-```
-<!-- HERITAGE GALLERY -->
-<div class="heritage-gallery reveal">
-  <p class="heritage-caption">Meeting with leaders at the Heritage Golf Tournament.</p>
-  <div class="heritage-grid">
-    <img src="https://i.ibb.co/GvPrc6X5/image000000.jpg" alt="Dr. Galloway meeting with leaders at the Heritage Golf Tournament" />
-    <img src="https://i.ibb.co/FL2Tb0Yr/image000000.jpg" alt="Dr. Galloway meeting with leaders at the Heritage Golf Tournament" />
-    <img src="https://i.ibb.co/Y4t8Y5Fm/image000000.jpg" alt="Dr. Galloway meeting with leaders at the Heritage Golf Tournament" />
-  </div>
-</div>
-```
+    <!-- ===== HERITAGE GOLF GALLERY ===== -->
+    <!-- Three-image grid showcasing candidate at Heritage Golf Tournament -->
+    <div class="heritage-gallery reveal">
+      <p class="heritage-caption">Meeting with leaders at the Heritage Golf Tournament.</p>
+      <div class="heritage-grid">
+        <img src="https://i.ibb.co/GvPrc6X5/image000000.jpg" alt="Dr. Galloway meeting with leaders at the Heritage Golf Tournament" />
+        <img src="https://i.ibb.co/FL2Tb0Yr/image000000.jpg" alt="Dr. Galloway meeting with leaders at the Heritage Golf Tournament" />
+        <img src="https://i.ibb.co/Y4t8Y5Fm/image000000.jpg" alt="Dr. Galloway meeting with leaders at the Heritage Golf Tournament" />
+      </div>
+    </div>
 
   </div>
 </section>
 
-<!-- FAMILY -->
+<!-- ============================================================================ -->
+<!-- FAMILY SECTION: Highlights family history of service and military heritage  -->
+<!-- Features: Family photo, service background, DAR membership, quote block     -->
+<!-- Mobile: Stacks to single column                                            -->
+<!-- ============================================================================ -->
 
-<section id="family">
+<section id="family" data-section="family">
   <div class="section-wrap">
     <div class="family-layout">
       <div class="reveal">
@@ -353,9 +378,13 @@
   </div>
 </section>
 
-<!-- PLATFORM -->
+<!-- ============================================================================ -->
+<!-- PLATFORM SECTION: Three-card grid showcasing campaign pillars and banner    -->
+<!-- Features: Trust, Champion Island, Deliver Results cards with lists          -->
+<!-- Mobile: Stacks to single column                                            -->
+<!-- ============================================================================ -->
 
-<section id="platform">
+<section id="platform" data-section="platform">
   <div class="section-wrap">
     <div class="section-header">
       <div class="eyebrow">The Issues</div>
@@ -413,9 +442,13 @@
   </div>
 </section>
 
-<!-- DISTRICT -->
+<!-- ============================================================================ -->
+<!-- DISTRICT SECTION: Map and voting information for District 11                -->
+<!-- Features: Precinct map, early voting and election day dates, polling places -->
+<!-- Mobile: Stacks to single column                                            -->
+<!-- ============================================================================ -->
 
-<section id="district">
+<section id="district" data-section="district">
   <div class="section-wrap">
     <div class="section-header">
       <div class="eyebrow">Your District</div>
@@ -444,9 +477,13 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- ============================================================================ -->
+<!-- TESTIMONIALS SECTION: Two-column grid of patient testimonials               -->
+<!-- Features: Testimonial cards with tags and patient quotes                    -->
+<!-- Mobile: Stacks to single column                                            -->
+<!-- ============================================================================ -->
 
-<section id="testimonials">
+<section id="testimonials" data-section="testimonials">
   <div class="section-wrap">
     <div class="section-header">
       <div class="eyebrow">Community Voice</div>
@@ -462,9 +499,12 @@
   </div>
 </section>
 
-<!-- PULLQUOTE -->
+<!-- ============================================================================ -->
+<!-- PULLQUOTE SECTION: Full-width quote with centered typography and CTA       -->
+<!-- Features: Large italic quote, attribution, call-to-action button            -->
+<!-- ============================================================================ -->
 
-<div class="pullquote-section">
+<div class="pullquote-section" data-section="pullquote">
   <div class="pullquote-inner">
     <p class="pullquote-text">&ldquo;What draws us all to this special place &mdash; this piece of heaven &mdash; is its breathtaking natural beauty, rich cultural heritage, warm Lowcountry communities, and world-class quality of life. It&rsquo;s time we protect it.&rdquo;</p>
     <div class="pullquote-line"></div>
@@ -473,9 +513,13 @@
   </div>
 </div>
 
-<!-- CONTACT -->
+<!-- ============================================================================ -->
+<!-- CONTACT SECTION: Two-column layout with contact info and engagement form    -->
+<!-- Features: Location, election dates, email signup, campaign contact form     -->
+<!-- Mobile: Stacks to single column, form spans full width                      -->
+<!-- ============================================================================ -->
 
-<section id="contact">
+<section id="contact" data-section="contact">
   <div class="section-wrap">
     <div class="section-header" style="text-align:center;margin-bottom:3rem;">
       <div class="eyebrow" style="justify-content:center;">Get Involved</div>
@@ -498,36 +542,42 @@
         </div>
         <div class="contact-socials">
           <a href="#" class="social-link" onclick="openDonate(event)">Donate</a>
+          <a href="https://www.instagram.com/dr.elizabethgalloway" target="_blank" rel="noopener" class="social-link">Instagram</a>
         </div>
         <blockquote style="margin-top:2rem;padding:1.5rem;border:1px solid var(--rule);background:var(--white);font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--text-mid);line-height:1.6;border-left:3px solid var(--gold);">&ldquo;I will fight for honest, open discussions on the issues that matter most, collaborate with our town and county leaders, and always make principled decisions that put Hilton Head families and our island&rsquo;s future first.&rdquo;</blockquote>
       </div>
 
-
-  <!-- CONTACT FORM — wired to PayMeGPT webhook -->
-  <div class="form-grid">
-    <div class="form-row2">
-      <div class="form-group"><label class="form-label">First Name *</label><input type="text" id="cf-first" class="form-input" placeholder="Jane" required /></div>
-      <div class="form-group"><label class="form-label">Last Name *</label><input type="text" id="cf-last" class="form-input" placeholder="Smith" required /></div>
+      <!-- ===== CONTACT FORM — wired to PayMeGPT webhook ===== -->
+      <!-- Email submission form with validation and success messaging -->
+      <div class="form-grid">
+        <div class="form-row2">
+          <div class="form-group"><label class="form-label">First Name *</label><input type="text" id="cf-first" class="form-input" placeholder="Jane" required /></div>
+          <div class="form-group"><label class="form-label">Last Name *</label><input type="text" id="cf-last" class="form-input" placeholder="Smith" required /></div>
+        </div>
+        <div class="form-group"><label class="form-label">Email *</label><input type="email" id="cf-email" class="form-input" placeholder="jane@example.com" required /></div>
+        <div class="form-group"><label class="form-label">Subject *</label><input type="text" id="cf-subject" class="form-input" placeholder="How can I help?" required /></div>
+        <div class="form-group"><label class="form-label">Message *</label><textarea id="cf-message" class="form-textarea" placeholder="Tell Dr. Galloway what matters most to you, or how you'd like to get involved..." required></textarea></div>
+        <label class="form-check"><input type="checkbox" id="cf-newsletter" /> Sign up for news and campaign updates</label>
+        <button type="button" id="cf-submit" class="form-submit" onclick="handleContactSubmit()">Send Message</button>
+        <div class="form-success" id="formSuccess">Message received! Dr. Galloway's team will be in touch soon. Thank you for your support.</div>
+        <div class="form-error" id="formError">Something went wrong. Please try again or refresh the page.</div>
+      </div>
     </div>
-    <div class="form-group"><label class="form-label">Email *</label><input type="email" id="cf-email" class="form-input" placeholder="jane@example.com" required /></div>
-    <div class="form-group"><label class="form-label">Subject *</label><input type="text" id="cf-subject" class="form-input" placeholder="How can I help?" required /></div>
-    <div class="form-group"><label class="form-label">Message *</label><textarea id="cf-message" class="form-textarea" placeholder="Tell Dr. Galloway what matters most to you, or how you'd like to get involved..." required></textarea></div>
-    <label class="form-check"><input type="checkbox" id="cf-newsletter" /> Sign up for news and campaign updates</label>
-    <button type="button" id="cf-submit" class="form-submit" onclick="handleContactSubmit()">Send Message</button>
-    <div class="form-success" id="formSuccess">Message received! Dr. Galloway's team will be in touch soon. Thank you for your support.</div>
-    <div class="form-error" id="formError">Something went wrong. Please try again or refresh the page.</div>
-  </div>
-</div>
-
 
   </div>
 </section>
 
-<footer>
+<!-- ============================================================================ -->
+<!-- FOOTER: Campaign info, legal text, and navigation links                     -->
+<!-- Features: Brand, copyright, footer nav with responsive layout               -->
+<!-- ============================================================================ -->
+
+<footer data-section="footer">
   <div class="footer-inner">
     <div class="footer-brand">Dr. Elizabeth Galloway for Beaufort County Council District 11</div>
-    <div class="footer-legal">Paid for by Dr. Elizabeth Galloway for Beaufort County Council &middot; Hilton Head Island, SC &middot; 2026</div>
+    <div class="footer-legal">Paid for by Dr. Elizabeth Galloway for Beaufort County Council &middot; Hilton Head Island, SC &middot; 2025</div>
     <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="https://www.instagram.com/dr.elizabethgalloway" target="_blank" rel="noopener noreferrer">Instagram</a>
       <a href="#platform">Platform</a>
       <a href="#district">Voting Info</a>
       <a href="#contact">Contact</a>
@@ -535,7 +585,10 @@
   </div>
 </footer>
 
-<!-- SIGNUP POPUP -->
+<!-- ============================================================================ -->
+<!-- SIGNUP POPUP MODAL: Email signup form with session storage dismiss         -->
+<!-- Features: First/last name, email input, success state, auto-dismiss         -->
+<!-- ============================================================================ -->
 
 <div class="popup-overlay" id="popupOverlay">
   <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
@@ -560,7 +613,10 @@
   </div>
 </div>
 
-<!-- DONATE POPUP -->
+<!-- ============================================================================ -->
+<!-- DONATE POPUP MODAL: Donation form with embedded payment button             -->
+<!-- Features: Donation CTA, embedded Converge Pay button                        -->
+<!-- ============================================================================ -->
 
 <div class="popup-overlay" id="donateOverlay">
   <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="donateTitle" style="max-width:520px;">
@@ -582,7 +638,13 @@
 </div>
 
 <script>
-  // ── CONTACT FORM → PayMeGPT Webhook ──────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════════════════
+  // ===== CONTACT FORM → PayMeGPT Webhook =====
+  // Function: handleContactSubmit()
+  // Purpose: Validate and submit contact form data to webhook with error handling
+  // Triggers: Click on "Send Message" button
+  // ══════════════════════════════════════════════════════════════════════════
+  
   const WEBHOOK_URL = 'https://paymegpt.com/api/webhooks/flow/2838/168a1b792978ee21ac0dc7d9a080157669643206f94f035ea7955fcf3fed7a69';
 
   async function handleContactSubmit() {
@@ -644,20 +706,44 @@
     }
   }
 
-  // ── DONATE POPUP ─────────────────────────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════════════════
+  // ===== DONATE POPUP =====
+  // Function: openDonate() / closeDonate()
+  // Purpose: Toggle visibility of donation modal overlay
+  // Triggers: Click on "Donate" button or overlay close
+  // ══════════════════════════════════════════════════════════════════════════
+  
   function openDonate(e) { if(e) e.preventDefault(); document.getElementById('donateOverlay').classList.add('open'); }
   function closeDonate() { document.getElementById('donateOverlay').classList.remove('open'); }
   document.getElementById('donateOverlay').addEventListener('click', function(e) { if (e.target === this) closeDonate(); });
 
-  // ── NAV ───────────────────────────────────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════════════════
+  // ===== MOBILE NAVIGATION MENU =====
+  // Function: toggleMenu()
+  // Purpose: Show/hide navigation menu on mobile devices
+  // Triggers: Click on hamburger button or nav link
+  // ══════════════════════════════════════════════════════════════════════════
+  
   function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
 
-  // ── REVEAL ON SCROLL ──────────────────────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════════════════
+  // ===== SCROLL REVEAL ANIMATION =====
+  // Function: IntersectionObserver
+  // Purpose: Trigger fade-in animation when elements enter viewport
+  // Triggers: Scroll event (native browser intersection detection)
+  // ══════════════════════════════════════════════════════════════════════════
+  
   const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // ── SIGNUP POPUP ──────────────────────────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════════════════
+  // ===== SIGNUP POPUP FORM =====
+  // Function: handlePopupSubmit()
+  // Purpose: Submit email signup form to webhook with validation
+  // Triggers: Form submit in popup modal
+  // ══════════════════════════════════════════════════════════════════════════
+  
   const POPUP_WEBHOOK_URL = 'https://paymegpt.com/api/webhooks/flow/2839/66478cd7ac94ff83fd5f73cc95a840a8de7f3ebaf0d4ac8cc1a8d2dc4670fa35';
 
   function closePopup() { document.getElementById('popupOverlay').classList.remove('open'); }
@@ -707,7 +793,14 @@
     }, 6000);
   }
 
-  // ── COUNTDOWN ─────────────────────────────────────────────────────────────
+  // ══════════════════════════════════════════════════════════════════════════
+  // ===== ELECTION COUNTDOWN TIMER =====
+  // Function: updateCountdown()
+  // Purpose: Calculate and display real-time countdown to election day
+  // Triggers: Page load and every 1 second via setInterval
+  // Target: June 9, 2026 at 7:00 AM Eastern Time
+  // ══════════════════════════════════════════════════════════════════════════
+  
   function updateCountdown() {
     const target = new Date('2026-06-09T07:00:00-04:00').getTime();
     const now = Date.now();
